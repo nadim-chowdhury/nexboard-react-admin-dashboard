@@ -1,0 +1,40 @@
+import { Button } from "@/components/ui/button";
+import { Sparkles, ArrowLeft, Home } from "lucide-react";
+import Link from "next/link";
+
+export default function NotFoundPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background pattern-dots p-4">
+      <div className="text-center max-w-md">
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gradient shadow-lg">
+            <Sparkles className="h-6 w-6 text-white" />
+          </div>
+          <span className="text-2xl font-bold tracking-tight">NexBoard</span>
+        </div>
+
+        <h1 className="text-8xl font-bold text-gradient mb-4">404</h1>
+        <h2 className="text-xl font-semibold mb-2">Page Not Found</h2>
+        <p className="text-muted-foreground mb-8">
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+          Let&apos;s get you back on track.
+        </p>
+
+        <div className="flex items-center justify-center gap-3">
+          <Link href="/dashboard/analytics">
+            <Button variant="outline">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Go Back
+            </Button>
+          </Link>
+          <Link href="/dashboard/analytics">
+            <Button className="bg-brand-gradient text-white border-0 hover:opacity-90">
+              <Home className="h-4 w-4 mr-2" />
+              Dashboard
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
